@@ -2,16 +2,19 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>杨小胖的购物商城</title>
+<title>杨小胖的摄影专区</title>
 <script src="http://www.51rgb.com/js/jquery.js"></script>
+
 <style>
-	html,body,div,ul,li,img{padding: 0; margin: 0;}
-		li{list-style: none;}
-	.all{ width: 100%; min-height: 2400px;}
+
+	html,body,div,ul,li,img,p,input{padding: 0; margin: 0;}
+	input{outline: none;}
+	li{list-style: none;}
+	.all{ width: 100%; min-height: 1200px;font-family: Microsoft YaHei,Verdana, Geneva, sans-serif;}
 	.menubg{ width: 100%; height: 40px; background-color: #272727;}
 	.top{ width: 100%; height: 286px;}
 	.menu_content{margin: 0 auto; width: 1200px; height: 100%;}
-	.menu_left ul li{float: left; color:#8C8C8C; font-size: 15px; padding:0 5px; border-right:1px solid #3F3F3F;}
+	.menu_left ul li{float: left; color:#8C8C8C; font-size: 15px; padding:0 10px; border-right:1px solid #3F3F3F;}
 	.menu_left{padding-top: 10px; float: left;}
 	.menu_left ul li a{text-decoration: none; color:#8C8C8C; }
 	.menu_left ul li a:hover{color: #FFFFFF;}
@@ -22,21 +25,95 @@
 	.menu_right ul li a{text-decoration: none; color:#8C8C8C; }
 	.menu_right ul li a:hover{color: #FFFFFF;}
 	.menu_right ul{float: left;}
-	.gouwuche{float: left; height: 40px; color: #8C8C8C; font-size: 15px; line-height: 40px; width: 100px; text-align: center; background-color:#424242; margin-left: 20px; position: relative;}
+	.gouwuche{float: left; height: 40px; color: #8C8C8C; font-size: 12px; line-height: 40px; width: 100px; text-align: center; background-color:c; margin-left: 20px; position: relative;}
 	.gouwuchesp{color:#ea990b!important;}
 	.gouwuchebg{background-color: #fff;}
-	.gouwuchecontent{display: block!important;}
-    .gouwuche_con{width: 180px;height: 70px; box-shadow: 0px 0px 5px #ccc; margin-left: -80px; position: relative; z-index:0; display: none; line-height: 70px; text-align: center;}
-    .gouwuche_a{width: 100px;height: 40px;
-    	display: block; position: relative; z-index: 1;}
-    .gouwuche a{color: #8C8C8C;text-decoration: none;background-color: #424242;}
-    .contentbg{width: 1200px;height: 80px;margin: 0 auto;}
+	.gouwuchecontent{display:block!important}
+	.gouwuche_con{ width: 180px; height: 70px;background-color:#fff;  box-shadow: 0px 0px 5px #ccc; margin-left: -80px;  position: relative; z-index: 5; display: none; line-height: 70px; text-align: center;}
+	.gouwuche_a{ width: 100px; height: 40px;display: block;position: relative;z-index: 10;}
+	.gouwuche a{color:#8C8C8C; text-decoration: none; background-color: #424242;}
+	.contentbg{ width:1200px; height: 80px; margin: 0 auto;}
+	.content_middle{float: left; width: 750px; height: 68px; line-height: 68px; padding-top: 12px;}
+	.content_middle ul li{float: left; padding:0 10px;}
+	.content_middle ul{ margin-left: 0px;}
+	.content_right{width: 285px; height: 60px; float: right;padding-top: 20px;position: relative;}
+	.content_middle a{text-decoration: none; color: #000;}
+	.content_middle a:hover{color: #f00;}
+	.content_middle_con{ width: 100%; height: 220px; box-shadow: 0px 2px 2px #ccc; border-top:1px solid #ccc;z-index: 100;position: absolute;}
+	.middle_ul_1_top{width: 80px; height: 24px;line-height:24px; border: 1px solid #c36400; text-align: center;margin-left:70px; color: #c36400;font-size: 12px;margin-top: -1px;}
+	.middle_ul_1{width: 1200px; height: 220px; margin: 0 auto;}
+	.middle_ul_1_middle_img{width: 220px; height: 120px; margin-top: 10px; float: left;}
+	.middle_ul_1_middle_sp{border-right: 1px solid #ccc;width: 1px; height: 100px;float: left; margin-top:12px;margin-left: -10px; }
+	.middle_ul_1_middle{width: 220px; height: 130px;}
+	.middle_ul_1_bottom p{width: 220px; height: 20px; font-size: 12px;text-align: center;color: #c36400}
+	.middle_ul_1_bottom p:first-child{padding-top: 15px; color: #949494;}
+	.content_middle_con li{ width: 220px; height: 100%; float: left;}
+	.content_middle_con ul{display: none;}
+	.content_middle_con{display: none; position: absolute;background-color: #FFFFFF;}
+	
+	.content_right_inp{width: 240px; height: 40px;border: 1px solid #A7A7A7;float: left;}
+	.content_right_inp_focus{border: 1px solid  #ea990b; }
+	
+	.fangdajing{width: 40px; height: 30px; background-color: #FFFFFF; float: left; border: 1px solid #A7A7A7;margin-left: -1px; padding-top: 10px;text-align: center;}
+	.fangdajingbg{ background-color: #ea990b; border: 1px solid #ea990b;}
+	.fangdajingbg_focus{border: 1px solid #ea990b;}
+	
+	.fangdajing_pic{margin-left: -1px;}
+	
+	.content_right a{position: absolute; top:32px;text-decoration: none; color: #aaa;background-color: #eee;padding:1px 5px; font-size: 12px;}
+	.content_right_a1{right: 130px;}
+	.content_right_a2{right: 60px;}
+	
+	.content_right_inp_con{width: 240px; height: auto; border: 1px solid #ea990b;display: none; background-color: #fff;}
+	
+	.contont2bg{width: 100%; height: 500px;}
+	.contont2{width: 1200px; height: 500px; margin: 0 auto;background-image: url("images/bz.jpg");}
+
+	.contont2_nav{width: 250px; height: 470px; background:rgba(0,0,0,0.3);
+	padding: 15px 0;position: relative;z-index:10}
+	
+	.contont2_nav li{margin: 0 0;padding: 0 20px 0 30px; height: 58px; line-height: 58px; color: #FFFFFF;
+	}
+	.contont2_nav li:hover{background-color:rgba(200,200,200,0.5);}
+
+
+
+
+	.contont2_nav_con{width: 500px; height: 500px;
+	position: absolute;left: 250px;top:0px; display: none; }
+	.contont2_nav_con ul li a{text-decoration: none;color: #fff; font-family:Microsoft YaHei,Verdana, Geneva, sans-serif;}
+
+	.contont2_nav li:hover .contont2_nav_con{display: block;}
+	.contont2_nav_con_1{width:650px; height: 500px; background-color:#fff;}
+	
+	.contont2_nav_sp1{float: left;} 
+	.contont2_nav_sp2{float: right;}
+	
+	.chanpinbg{ width: 100%; height: 200px;}
+	.chanpin{ width:1200px; height: 200px; margin: 0 auto; margin-top: 15px;}
+	.chanpin>ul>li{float: left;width: 310px; height: 171px; margin-left: 7px;background: #666;}
+	.chanpin>ul>li:first-child{margin-left: 0;width: 250px;}
+	.chanpin_1{ width: 250px; height: 200px;}
+	.chanpin_2 img{width: 310px; height:  100%;}
+	.chanpin_2_2{margin-left: 6px!important;}
+	.chanpin_1_li{width: 83px; height: 85px; float: left;}
+	.chanpin_1_li_left{float: left; width: 82px; height: 121px;text-align: center;}
+	.chanpin_1_li_left a{text-decoration: none; color: #bbb;}
+	.chanpin_1_li_right{float: left;  height: 70px; border-right: 1px solid #777;margin-top: 10px;}
+	.chanpin_1_li_left_p3{border-bottom: 1px solid #777; width: 65px; margin-left: 9px;}
+	.chanpin_1_li_left_p1{padding-top: 25px;}
+	.chanpin_1_li_left_p2{height: 40px;font-size: 12px; line-height: 20px; color: #bbb;}
+
 
 </style>
 </head>
 
 <body>
-
+<div style="display:none"; class="music">
+  <audio controls="controls" autoplay="autoplay" loop=-1>
+  <source src="王嘉尔-Papillon.mp3" type="audio/mpeg" />
+</audio>
+</div>
 <div class="all">
 	<div class="top">
 		<img src="/1421172253杨娟娟/images/top.jpg">
@@ -45,49 +122,438 @@
 		<div class="menu_content">
 			<div class="menu_left">
 				<ul>
-					<li><a href="https://www.jd.com/2017?t=">笔记本</a></li>
-					<li><a href="left">台式机</a></li>
-					<li><a href="https://www.taobao.com/?prepvid=200_172.29.81.7_306_1515733963258&extra=&spm=a231o.7076277.1581860521.1.708fcabcGSUU67&pid=mm_129021960_40306128_154012418&clk1=&unid=&source_id=&app_pvid=200_172.29.81.7_306_1515733963258">显示器</a></li>
-					<li><a href="https://list.jd.com/list.html?cat=670,686,690">鼠标</a></li>
-					<li><a href="https://list.jd.com/list.html?cat=670,686,689">键盘</a></li>
-					<li><a href="https://www.apple.com/cn//?afid=p238%7Ck6fuH95H_mtid_18707vxu38484&cid=aos-cn-kwsg-brand">iPhone</a></li>
-					<li><a href="https://www.mi.com/">小米</a></li>
-					<li><a href="https://www.vmall.com/">华为</a></li>
-					<li><a href="http://www.oppo.com/cn/">OPPO</a></li>
-					<li><a href="http://www.vivo.com.cn/">vivo</a></li>
-					<li class="menu_left_last"><a href="https://www.baidu.com/?tn=72038325_5_hao_pg">Select Region</a></li>
+					<li><a href="images/gr2.jpg">个人简介</a></li>
+					<li><a href="https://user.qzone.qq.com/755498990?source=aiostar">QQ空间</a></li>
+					<li><a href="https://weibo.com/2871137231/profile?rightmod=1&wvr=6&mod=personinfo">新浪微博</a></li>
+					<li><a href="tencent://message/?uin=1820791821&Site=www.hitux.com&Menu=yes">QQ</a></li>
+					<li><a href="https://u.wechat.com/ENKBpHkIKulXwSVvHfD0ts8">微信</a></li>
+					<li><a href="https://www.apple.com/cn//?afid=p238%7Ck6fuH95H_mtid_18707vxu38484&cid=aos-cn-kwsg-brand">Select Region</a></li>
+					
+					
 				
 				</ul>
 			</div>
 			<div class="menu_right">
 				<ul>
-					<li><a href="http://www.51rgb.com">登录</a><span class="line">|</span></li>
-					<li><a href="http://www.51rgb.com">注册</a><span class="line">|</span></li>
-					<li><a href="http://www.51rgb.com">消息通知</a></li>
+					<li><a href="https://passport.baidu.com/v2/?login&u=http://wenku.baidu.com/task/browse/daily">登录</a><span class="line">|</span></li>
+					<li><a href="https://passport.baidu.com/v2/?reg&tpl=holmes_maa&u=https://mtj.baidu.com/web/welcome/psp">注册</a><span class="line">|</span></li>
+					<li><a href="http://www.runoob.com/">消息通知</a></li>
 				</ul>
 				<div class="gouwuche">
 					<a class="gouwuche_a" href="https://www.baidu.com/?tn=72038325_5_hao_pg">
 					<img style="width: 18px; vertical-align: middle; margin-right: 2px;" src="/1421172253杨娟娟/images/gouwuche-hui.png">
 					<span>购物车</span></a>
 					<div class="gouwuche_con">
-						购物车还是空的！来选购吧
+						这是个假的购物车！
 					</div>
 					
 				</div>
 			</div>
 		</div>
+
 		<div class="contentbg">
 
+
 			<div class="content">
-				<div class="content_left">
-					<img src="/1421172253杨娟娟/images/putao.png">
+				
+				<div class="content_middle">
+					<ul>
+
+					<li><a href="#">摄影展示</a></li>
+					<li><a href="#">素描展示</a></li>
+					<li><a href="#">水彩展示</a></li>
+					<li><a href="#">兴趣爱好</a></li>
+					
+				</ul>
+
 				</div>
-				<div class="content_middle"></div>
-				<div class="content_right"></div>
+				<div class="content_right">
+					<input class="content_right_inp" type="text"/>
+				<div class="fangdajing">
+					<img class="fangdajing_pic" src="/1421172253杨娟娟/images/fangdajing-hui.png">
+				</div>
+				<a class="content_right_a1" href="#">素描作品</a><a class="content_right_a2" href="#">摄影作品</a>
+				<div class="content_right_inp_con">
+					<ul>
+						<li>关于摄影</li>
+
+					</ul><br>
+					<ul>
+						<li> 关于摄影</li>
+
+					</ul>
+
+				</div>
 			</div>
 			
 		</div>
 	</div>
+	<div class="content_middle_con">
+		<ul class="middle_ul_1">
+			<li>
+				<div class="middle_ul_1_top">摄影集No.1</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sheyingno1.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>厦门市杏林湾</p>
+					<p>尼康</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">摄影集No.2</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sheyingno2.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>漳州市小东山</p>
+					<p>佳能</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">摄影集No.3</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sheyingno3.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>漳州市小东山</p>
+					<p>佳能</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">摄影集No.4</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sheyingno4.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>厦门市杏林湾</p>
+					<p>尼康</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">摄影集No.5</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sheyingno5.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>厦门市杏林湾</p>
+					<p>尼康</p>
+				</div>
+			</li>
+		</ul>
+		<ul class="middle_ul_1">
+			<li>
+				<div class="middle_ul_1_top">素描集No.1</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sumiaono1.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>别人画的</p>
+					<p>大黄牛</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">素描集No.2</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sumiaono2.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>还是别人画的</p>
+					<p>大笨猫</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">素描集No.3</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sumiaono3.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>男神男神</p>
+					<p>刘德华</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">素描集No.4</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sumiaono4.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>哥哥</p>
+					<p>张国荣</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">素描集No.5</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/sumiaono5.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>谦友吧</p>
+					<p>薛之谦</p>
+				</div>
+			</li>
+		</ul>
+		<ul class="middle_ul_1">
+			<li>
+				<div class="middle_ul_1_top">水彩集No.1</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/shuicaino1.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>水彩画</p>
+					<p>风景</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">水彩集No.2</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/shuicaino2.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>水彩画</p>
+					<p>风景</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">水彩集No.3</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/shuicaino3.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>水彩画</p>
+					<p>风景</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">水彩集No.4</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/shuicaino4.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>水彩画</p>
+					<p>风景</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">水彩集No.5</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/shuicaino5.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>水彩画</p>
+					<p>风景</p>
+				</div>
+			</li>
+		</ul>
+<ul class="middle_ul_1">
+			<li>
+				<div class="middle_ul_1_top">兴趣爱好No.1</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/jita.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>吉他</p>
+					<p>你猜我会不会</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">兴趣爱好No.2</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/lunhua.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>轮滑</p>
+					<p>这个我还是会的</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">兴趣爱好No.3</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/huaban.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>滑板</p>
+					<p>很酷有没有</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">兴趣爱好No.4</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/jiewu.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>街舞</p>
+					<p>口可口可</p>
+				</div>
+			</li>
+			<li>
+				<div class="middle_ul_1_top">兴趣爱好No.5</div>
+				<div class="middle_ul_1_middle">
+					<img class="middle_ul_1_middle_img" src="/1421172253杨娟娟/images/daxiao.png">
+					<span class="middle_ul_1_middle_sp"></span>
+				</div>
+				<div class="middle_ul_1_bottom">
+					<p>等等</p>
+					<p>敲级可爱</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="contont2bg">
+		<div class="contont2">
+			
+			<ul class="contont2_nav">
+				<li><span class="contont2_nav_sp1">关于摄影</span><span class="contont2_nav_sp2">></span>
+					<div class="contont2_nav_con contont2_nav_con_1"><a href="https://mp.weixin.qq.com/s/QkuaD5b0HVjYSLcfOvejTg">
+						<img src="/1421172253杨娟娟/images/2.jpg"></a></div>
+				</li>
+				<li><span class="contont2_nav_sp1">摄影基础</span><span class="contont2_nav_sp2">></span>
+					<div class="contont2_nav_con"><a href="https://mp.weixin.qq.com/s/aLGsXlcmxeHK_6pE-60Z5Q">
+						<img src="/1421172253杨娟娟/images/sheyingjichu.jpg"></a></div>
+				</li>
+				<li><span class="contont2_nav_sp1">摄影初学者</span><span class="contont2_nav_sp2">></span>
+					<div class="contont2_nav_con"><a href="https://mp.weixin.qq.com/s/lYgb6RHvpdeukTpU_771sA">
+						<img src="/1421172253杨娟娟/images/chuxuezhe.jpg"></a></div>
+				</li>
+				<li><span class="contont2_nav_sp1">什么是单反相机?</span><span class="contont2_nav_sp2">></span>
+					<div class="contont2_nav_con"><a href="https://mp.weixin.qq.com/s/Z2tpXzdGU2DjRch3PmY8MA">
+						<img src="/1421172253杨娟娟/images/danfan.jpg"></a></div>
+				</li>
+				<li><span class="contont2_nav_sp1">技术？艺术？</span><span class="contont2_nav_sp2">></span>
+					<div class="contont2_nav_con"><a href="https://mp.weixin.qq.com/s/Ad66uAg3MWyczBtBwQtqEQ">
+						<img src="/1421172253杨娟娟/images/jishuyishu.jpg"></a></div>
+				</li>
+				<li><span class="contont2_nav_sp1">不要辜负了你的相机</span><span class="contont2_nav_sp2">></span>
+					<div class="contont2_nav_con"><a href="https://mp.weixin.qq.com/s/yIhQP29LEnpSCp8ZxoP-Og">
+						<img src="/1421172253杨娟娟/images/xiangji.jpg"></a></div>
+				</li>
+				<li><span class="contont2_nav_sp1">浮生若梦</span><span class="contont2_nav_sp2">></span>
+					<div class="contont2_nav_con"><a href="https://mp.weixin.qq.com/s/N1F_5H7_pUtqAuFPvTbKMA">
+						<img src="/1421172253杨娟娟/images/jitangwen.jpg"></a></div>
+				</li>
+				<li><span class="contont2_nav_sp1">投稿作品</span><span class="contont2_nav_sp2">></span>
+					<div class="contont2_nav_con" style="background-image: url(images/tougao.jpg);">
+						<ul>
+						
+								<li><a href="https://mp.weixin.qq.com/s/o0AyO7CophBFRKtMWG93bg">温柔</a></li>
+								<li><a href="https://mp.weixin.qq.com/s/X3QAyiZWSl_zllQMDaavsQ">毕业季</a></li>
+								<li><a href="https://mp.weixin.qq.com/s/-LiyoYj9zhHLRRW9MVaXWA">少年花</a></li>
+								<li><a href="https://mp.weixin.qq.com/s/y422nx3_MowdZ0cK3Y8jsA">致，孤独</a></li>
+								<li><a href="https://mp.weixin.qq.com/s/Dujl2PkebkGOwXaLMAhEQQ">夏日时光</a></li>
+								<li><a href="https://mp.weixin.qq.com/s/XdEBpS7w3xYP943YLokJHw">念念不忘的年代</a></li>
+								<li><a href="https://mp.weixin.qq.com/s/68ntlBprC4z41HuPtB0qMw">这么远，那么近</a></li>
+								<li><a href="https://mp.weixin.qq.com/s/WJo2RWsbr6v1xqsrNhdAfQ">陪着你，从天亮走到天黑</a></li>
+
+
+							</ul>
+						
+						
+						
+					</div>
+				</li>
+				
+				
+			</ul>
+		</div>
+	</div>
+	<div class="chanpinbg">
+		<div class="chanpin">
+			<ul>
+				<li class="chanpin_1">
+					<ul>
+						<li class="chanpin_1_li">
+							<div class="chanpin_1_li_left">
+								<p class="chanpin_1_li_left_p1"><a href="http://www.twitterios.com/">
+									<img src="/1421172253杨娟娟/images/twitter.png"></p>
+								<p class="chanpin_1_li_left_p2">Twitter</a></p>
+								<p class="chanpin_1_li_left_p3"></p>
+							</div>
+							<div class="chanpin_1_li_right"></div>
+						</li>
+						<li class="chanpin_1_li">
+							<div class="chanpin_1_li_left">
+								<p class="chanpin_1_li_left_p1"><a href="http://www.facebookol.com/">
+									<img src="/1421172253杨娟娟/images/facebook.png"></p>
+								<p class="chanpin_1_li_left_p2">Facebook</a></p>
+								<p class="chanpin_1_li_left_p3"></p>
+							</div>
+							<div class="chanpin_1_li_right"></div>
+						</li>
+						<li class="chanpin_1_li">
+							<div class="chanpin_1_li_left">
+								<p class="chanpin_1_li_left_p1"><a href="http://www.utubechinese.com.tw/youtube/youtube-url">
+									<img src="/1421172253杨娟娟/images/youtub.png"></p>
+								<p class="chanpin_1_li_left_p2">YouTube</a></p>
+								<p class="chanpin_1_li_left_p3"></p>
+							</div>
+							
+						</li>
+						<li class="chanpin_1_li">
+							<div class="chanpin_1_li_left">
+								<p class="chanpin_1_li_left_p1"><a href="http://www.google.cn/">
+									<img src="/1421172253杨娟娟/images/google.png"></p>
+								<p class="chanpin_1_li_left_p2">Google</a></p>
+							
+							</div>
+							<div class="chanpin_1_li_right"></div>
+						</li>
+						<li class="chanpin_1_li">
+							<div class="chanpin_1_li_left">
+								<p class="chanpin_1_li_left_p1"><img src="/1421172253杨娟娟/images/share.png"></p>
+								<p class="chanpin_1_li_left_p2">Share this</p>
+							
+							</div>
+							<div class="chanpin_1_li_right"></div>
+						</li>
+						<li class="chanpin_1_li">
+							<div class="chanpin_1_li_left">
+								<p class="chanpin_1_li_left_p1"><a href="http://vimeo.com/">
+									<img src="/1421172253杨娟娟/images/vimeo.png"></p>
+								<p class="chanpin_1_li_left_p2">Vimeo</a></p>
+							
+							</div>
+							
+						</li>
+					</ul>
+				</li>
+				<li class="chanpin_2 chanpin_2_2">
+					<a href="https://weibo.com/laiyayen?c=spr_wbprod_sougou_sgss_weibo_t001">
+						<img src="/1421172253杨娟娟/images/lyy.png"></a>
+				</li>
+				<li class="chanpin_2">
+					<a href="https://weibo.com/eddiepeng?c=spr_wbprod_sougou_sgss_weibo_t001">
+						<img src="/1421172253杨娟娟/images/pyy.jpg"></a>
+				</li>
+				<li class="chanpin_2">
+					<a href="https://weibo.com/u/1976794091">
+						<img src="/1421172253杨娟娟/images/jlc.jpg"></a>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
+
+
 <script>
 	$(function(){
 		$(".gouwuche").mouseover(function(){
@@ -111,6 +577,44 @@
 
 			}
 		})
+		$(".content_middle ul li").mouseover(function(){
+			
+			$(".content_middle_con").slideDown()
+			var $t=$(this);
+			var $t_index=$t.index();
+			$(".content_middle_con ul").hide().eq($t_index).show();
+		})
+		$(".contont2").mouseover(function(){
+			$(".content_middle_con").slideUp()
+		})
+		$(".contentbg").mouseover(function(e){
+			
+			if($(e.target).closest(".content_middle ul li").length==0){
+				$(".content_middle_con").slideUp()
+			}
+		})
+		$(".fangdajing").mouseover(function(){
+			$(".fangdajing").addClass("fangdajingbg");
+			$(".fangdajing img").attr("src","images/fangdajing-bai.png");
+		})
+		$(".fangdajing").mouseout(function(){
+			$(".fangdajing").removeClass("fangdajingbg");
+			$(".fangdajing img").attr("src","images/fangdajing-hui.png");
+		})
+
+		$(".content_right_inp").focus(function(){
+			$(".content_right_a1,.content_right_a2").hide();
+			$(".content_right_inp_con").show();
+			$(".content_right_inp").addClass("content_right_inp_focus");
+			$(".fangdajing").addClass("fangdajingbg_focus");
+		})
+		$(".content_right_inp").blur(function(){
+			$(".content_right_a1,.content_right_a2").show();
+			$(".content_right_inp_con").hide();
+			$(".content_right_inp").removeClass("content_right_inp_focus");
+			$(".fangdajing").removeClass("fangdajingbg_focus");
+		})
+
 
 		})
 </script>
